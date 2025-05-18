@@ -1,0 +1,307 @@
+/* src/teacher/css/style.css */
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #f8f9fa; /* Default light background */
+}
+
+/* Login Page Specific Styles */
+.login-page-body {
+    background-color: #eef2f7; /* A slightly different light background for login */
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    max-width: 420px;
+    width: 100%;
+    padding: 15px;
+}
+
+.login-card {
+    padding: 2rem 2.5rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    border: none;
+    background-color: #fff;
+}
+
+.app-brand-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #0d6efd; /* Bootstrap primary */
+    margin-bottom: 1.5rem;
+}
+.app-brand-login .fas {
+    margin-right: 12px;
+    font-size: 1.5em;
+}
+
+
+/* Dashboard Styles */
+/* Reset flex behavior for dashboard layout if login-page-body was applied */
+#dashboard-view {
+    display: flex; /* This is the d-flex from the HTML structure */
+    flex-direction: column; /* Stacks navbar and content-wrapper */
+    flex-grow: 1; /* Takes full height */
+}
+
+.content-wrapper { /* New wrapper for sidebar and main content */
+    display: flex;
+    flex-grow: 1;
+}
+
+
+#sidebar {
+    width: 280px;
+    min-height: calc(100vh - 56px); /* 56px is navbar height */
+    background-color: #fff; /* Cleaner white sidebar */
+    border-right: 1px solid #dee2e6;
+    padding-top: 1rem;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+}
+
+#sidebar h5 {
+    padding: 0 1rem 0.75rem 1.25rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #e9ecef;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #6c757d;
+}
+
+#sidebar .nav-link {
+    color: #495057;
+    padding: 0.7rem 1.25rem;
+    border-radius: 0.3rem;
+    margin: 0.1rem 0.75rem 0.25rem 0.75rem; /* top/bottom right/left */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+#sidebar .nav-link:hover {
+    background-color: #e9ecef;
+    color: #0056b3;
+}
+#sidebar .nav-link.active {
+    background-color: #0d6efd;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(13, 110, 253, 0.4);
+}
+#sidebar .nav-link.active:hover {
+    background-color: #0b5ed7;
+}
+#sidebar .nav-link .fas, #sidebar .nav-link .far {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+    font-size: 0.95em;
+}
+
+
+#main-content {
+    flex-grow: 1;
+    background-color: #f4f7f6; /* Light background for main content area */
+}
+
+#current-class-title {
+    margin-bottom: 1.5rem;
+    color: #343a40;
+    font-weight: 500;
+    font-size: 1.75rem;
+}
+
+#assignment-form-container {
+    border-radius: 0.5rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+    border: none;
+}
+#assignment-form-container .card-body {
+    padding: 2rem;
+}
+#assignment-form-container h5 { /* Form title */
+    display: flex;
+    align-items: center;
+    color: #0d6efd;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+#assignment-form-container h5 .fas {
+    margin-right: 10px;
+}
+
+
+.link-entry {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+    align-items: center;
+}
+.link-entry input[type="url"],
+.link-entry input[type="text"] {
+    flex-grow: 1;
+}
+.link-entry .remove-link-btn {
+    flex-shrink: 0;
+}
+
+/* Assignment Card Styling */
+#assignments-list .card {
+    border-radius: 0.5rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+    border: none;
+}
+#assignments-list .card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+#assignments-list .card-body {
+    padding: 1.25rem 1.5rem;
+}
+#assignments-list .card-title {
+    color: #0d6efd;
+    font-weight: 500;
+}
+#assignments-list .card-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem !important; /* Override Bootstrap if needed */
+}
+#assignments-list .card-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+}
+#assignments-list .card-text strong {
+    color: #333;
+}
+#assignments-list ul {
+    padding-left: 0; /* Reset default padding */
+    list-style-type: none;
+    font-size: 0.85rem;
+}
+#assignments-list ul li {
+    margin-bottom: 0.3rem;
+    padding: 0.25rem 0;
+}
+#assignments-list ul li a {
+    text-decoration: none;
+    color: #007bff;
+    word-break: break-all;
+}
+#assignments-list ul li a:hover {
+    text-decoration: underline;
+}
+
+#assignments-list .card-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+#assignments-list .card-actions .btn {
+    padding: 0.25rem 0.5rem; /* Smaller buttons */
+    font-size: 0.8rem;
+}
+#assignments-list .card-actions .btn .fas {
+    font-size: 0.9em; /* Adjust icon size within button */
+}
+
+
+.assignment-deadline { /* For teacher card view, if used standalone */
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+#assignments-list .assignment-details-section {
+    margin-bottom: 0.75rem;
+}
+#assignments-list .assignment-details-section:last-child {
+    margin-bottom: 0;
+}
+#assignments-list .assignment-details-section h6 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #343a40;
+    margin-bottom: 0.35rem;
+    display: flex;
+    align-items: center;
+}
+#assignments-list .assignment-details-section h6 .fas {
+    margin-right: 6px;
+    font-size: 0.9em;
+}
+#assignments-list .assignment-details-section p.small {
+    font-size: 0.85rem;
+}
+#assignments-list .assignment-details-section hr.my-2 {
+    margin-top: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+
+/* Spinner for buttons */
+.spinner-button .spinner-border-sm {
+    margin-left: 5px;
+    vertical-align: -0.125em; /* Align spinner better with text */
+}
+
+/* Loading and Empty States */
+.loading-state, .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    color: #6c757d;
+    font-size: 1.1rem;
+    min-height: 200px; /* Give some space */
+    text-align: center;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.loading-state .spinner-border {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: 1rem;
+    color: #0d6efd;
+}
+.empty-state .fas, .empty-state .far { /* Icon for empty state */
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #adb5bd;
+}
+
+/* Footer for attribution */
+.app-footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.85rem;
+    color: #6c757d;
+    background-color: #e9ecef; /* Light background for footer */
+    border-top: 1px solid #dee2e6;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Softer shadow */
+}
+.navbar-brand .fas {
+    margin-right: 8px;
+}
+
+/* Ensure full height for dashboard view even if body doesn't have flex */
+html, body {
+    height: 100%;
+}
+#dashboard-view {
+    min-height: 100%; /* Ensures the dashboard view takes full height */
+    /* display: flex and flex-direction: column are already set */
+}

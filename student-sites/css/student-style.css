@@ -1,0 +1,368 @@
+/* src/student-sites/css/style.css */
+:root {
+    --primary-color: #007bff; /* #0d6efd; */
+    --primary-hover-color: #0056b3;
+    --secondary-color: #6c757d;
+    --light-bg: #f8f9fa;
+    --light-gray-border: #dee2e6;
+    --text-color: #212529;
+    --sidebar-width: 320px;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: var(--font-family);
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f7f6; /* Light background for the whole page */
+    color: var(--text-color);
+}
+
+#student-sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--light-bg);
+    padding: 25px;
+    border-right: 1px solid var(--light-gray-border);
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+}
+
+#student-sidebar h3 {
+    margin-top: 0;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+#student-sidebar h3 .fas {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+
+#student-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#student-sidebar li a {
+    display: block;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: #33475b; /* Darker, more readable blue-gray */
+    border-radius: 6px;
+    margin-bottom: 6px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    font-weight: 500;
+    border-left: 4px solid transparent;
+}
+
+#student-sidebar li a:hover {
+    background-color: #e9ecef;
+    color: var(--primary-hover-color);
+    border-left-color: var(--primary-hover-color);
+}
+
+#student-sidebar li a.active {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    border-left-color: var(--primary-hover-color); /* Or a darker shade */
+}
+#student-sidebar li a.active .fas { /* Icon color for active link */
+    color: white; 
+}
+
+
+#student-sidebar .sidebar-section-header {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    padding: 15px 18px 8px; /* Less padding than links */
+    margin-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--light-gray-border);
+    margin-bottom: 10px;
+}
+#student-sidebar .sidebar-section-header:first-child {
+    margin-top: 0;
+}
+#student-sidebar .sidebar-section-header .fas {
+    margin-right: 8px;
+    font-size: 0.9em;
+}
+
+
+#student-sidebar .link-icon {
+    margin-right: 10px;
+    width: 20px; /* Ensure icons align items */
+    text-align: center;
+    color: var(--secondary-color);
+}
+#student-sidebar li a:hover .link-icon {
+    color: var(--primary-hover-color);
+}
+#student-sidebar li a.active .link-icon {
+    color: white;
+}
+
+#student-sidebar .loading-placeholder, 
+#student-sidebar .no-assignments-item {
+    padding: 15px;
+    text-align: center;
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+
+#student-main-content {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto;
+    background-color: #ffffff;
+}
+
+.assignment-content {
+    max-width: 900px; /* Content readability */
+    margin: 0 auto;
+}
+
+.assignment-content h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.75rem;
+    color: #333;
+    font-weight: 600;
+}
+.assignment-content h2.subtitle {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+.assignment-content .description {
+    margin-bottom: 2rem;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+.assignment-content .description h3 {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+.assignment-content .description h3 .fas {
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+
+.assignment-content .links-section h3 {
+    font-size: 1.3rem;
+    color: #444;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+.assignment-content .links-section h3 .fas {
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+.assignment-content .link-item {
+    margin-bottom: 1.5rem;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    background-color: #fdfdfd;
+    box-shadow: var(--box-shadow);
+}
+.assignment-content .link-item p.link-description-text {
+    margin-top:0;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #333;
+}
+.assignment-content .link-item iframe,
+.assignment-content .link-item .video-container iframe,
+.assignment-content .link-item .embedded-image {
+    width: 100%;
+    min-height: 450px; 
+    border: 1px solid var(--light-gray-border);
+    border-radius: 4px;
+}
+.assignment-content .link-item .embedded-image {
+    max-height: 600px;
+    object-fit: contain;
+    min-height: auto; /* Override for images */
+}
+.assignment-content .link-item .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+.assignment-content .link-item .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.assignment-content .link-item a.resource-link {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: var(--light-bg);
+    border: 1px solid var(--light-gray-border);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    word-break: break-all;
+}
+.assignment-content .link-item a.resource-link:hover {
+    background-color: #e2e6ea;
+    color: var(--primary-hover-color);
+}
+.assignment-content .link-item a.resource-link .fas,
+.assignment-content .link-item a.resource-link .fab {
+    margin-right: 8px;
+}
+
+
+.loading-placeholder, .no-assignment-placeholder {
+    text-align: center;
+    font-size: 1.3em;
+    color: var(--secondary-color);
+    margin-top: 60px;
+    padding: 20px;
+}
+
+/* Deadline Styling */
+.assignment-content .deadline-info {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 15px 20px;
+    border-left-width: 5px;
+    border-left-style: solid;
+    border-radius: 5px;
+    background-color: #fff; /* Cleaner background */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.assignment-content .deadline-info p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.assignment-content .deadline-info .fas,
+.assignment-content .deadline-info .far {
+    margin-right: 12px;
+    font-size: 1.2em;
+}
+.assignment-content .deadline-info strong {
+    margin-right: 5px;
+}
+
+.assignment-content .deadline-info.upcoming {
+    border-left-color: #28a745; /* Success green */
+    background-color: #e6f6e9;
+}
+.assignment-content .deadline-info.upcoming .fas {
+    color: #28a745;
+}
+.assignment-content .deadline-info.upcoming strong {
+    color: #155724;
+}
+.assignment-content .deadline-info .countdown-badge {
+    font-weight: 500;
+    color: #1e7e34;
+    margin-left: 5px;
+    font-style: italic;
+}
+
+
+.assignment-content .deadline-info.past-due {
+    border-left-color: #dc3545; /* Danger red */
+    /* background-color: #f2ffff; /* Original problematic color */
+    background-color: #f8d7da; /* Bootstrap's .alert-danger background color, or #fddde1 like .badge-due */
+}
+.assignment-content .deadline-info.past-due .fas {
+    color: #dc3545;
+}
+.assignment-content .deadline-info.past-due strong {
+    color: #721c24;
+}
+.assignment-content .deadline-info .badge-due {
+    font-weight: bold;
+    color: #dc3545; 
+    margin-left: 5px;
+    padding: 3px 6px;
+    background-color: #fddde1;
+    border-radius: 3px;
+}
+
+
+.assignment-content .deadline-info.not-set {
+    border-left-color: #ffc107; /* Warning yellow */
+    background-color: #fff8e1;
+}
+.assignment-content .deadline-info.not-set .fas {
+    color: #ffc107;
+}
+.assignment-content .deadline-info.not-set strong {
+    color: #856404;
+}
+
+.text-danger { /* For errors */
+    color: #dc3545;
+    text-align: center;
+    padding: 20px;
+}
+
+.student-project-tabs { /* This is the UL element with .nav .nav-pills classes */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: white; /* Background for the sticky bar */
+    z-index: 100;
+    padding: 10px 15px; /* Padding around the set of pills within the sticky bar */
+    margin-bottom: 1.5rem !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow for the sticky bar */
+}
+
+.student-project-tabs .nav-link {
+    color: var(--primary-color);
+    background-color: var(--light-bg); /* e.g., #f8f9fa */
+    border: 1px solid var(--light-gray-border); /* e.g., #dee2e6 */
+    font-weight: 500; /* Consistent with sidebar links */
+    border-radius: 6px; /* Rounded corners for pill/button appearance */
+    margin-right: 8px; /* Spacing between pills */
+    padding: 0.5em 1em; /* Padding inside each pill */
+    box-shadow: var(--box-shadow); /* Use the global --box-shadow variable */
+    line-height: 1.5; /* Ensures text is well-aligned vertically */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.student-project-tabs .nav-link.active {
+    color: white;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 600; /* Bolder text for active tab */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Can be a softer shadow for active/pressed state */
+}
+.student-project-tabs .nav-link:hover {
+    color: var(--primary-hover-color);
+    background-color: #e9ecef; /* Slightly darker background, matches sidebar hover */
+    border-color: #adb5bd; /* Slightly darker border */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15); /* Enhanced shadow on hover */
+}
+
+.student-project-panes .tab-pane {
+    padding-top: 1.5rem; /* Add some space below the tabs */
+}
